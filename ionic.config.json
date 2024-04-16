@@ -1,5 +1,7 @@
 {
   "name": "calenApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

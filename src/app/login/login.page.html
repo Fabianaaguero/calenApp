@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-title>loginscreen</ion-title> -->
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaulthref="loginscreen" text=""></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="ion-no-margin">
+    <ion-img src="assets/images/header1.png"></ion-img>
+
+    <ion-card-content>
+      <form [formGroup]="form" novalidate (ngSubmit)="login()" class="wrapform">
+        <ion-item>
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input formControlName="email" placeholder="Email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input type="password" formControlName="password" placeholder="Contraseña" required></ion-input>
+        </ion-item>
+      </form>
+
+      <div class="sign-btn-wrap">
+        <ion-button shape="round" fill="solid" class="sign-btn" type="submit" (click)="login()">Iniciar sesión</ion-button>
+      </div>
+
+      <div class="text-tag">
+        <span>O Inicia sesión con tu cuenta</span>
+      </div>
+
+      <div class="social-btns">
+       <ion-button shape="round" color="danger" (click)="loginWithGoogle()">
+         <ion-icon slot="start" name="logo-google"></ion-icon>
+       </ion-button>
+      </div>
+
+      <div class="ion-card-footer">
+        <span>No tenes cuenta aún?</span><button class="ion-no-padding" routerLink="/register">Registrate</button> 
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
